@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from .views import RegistrationView, CurrentUserView
+from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 from rest_framework.authtoken.views import obtain_auth_token
 
 
@@ -25,6 +26,10 @@ urlpatterns = [
     path("", include("book_giveaway.urls")),
     path('register/', RegistrationView.as_view(), name='register'),
     path('login/', obtain_auth_token, name='login'),
+    path('schema/', SpectacularAPIView.as_view(), name='schema'),
+    path('schema/docs/', SpectacularSwaggerView.as_view(url_name='schema')),
+
+
     path('me/', CurrentUserView.as_view(), name='current-user'),
 
 
