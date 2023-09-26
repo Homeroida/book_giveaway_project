@@ -17,15 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from .views import RegistrationView
-
-urlpatterns = [
-
-]
+from rest_framework.authtoken.views import obtain_auth_token
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("book_giveaway.urls")),
     path('register/', RegistrationView.as_view(), name='register'),
+    path('login/', obtain_auth_token, name='login'),
+
 
 ]

@@ -6,9 +6,9 @@ from django.conf.urls.static import static
 
 
 router = DefaultRouter()
-router.register(r'authors', AuthorViewSet)
-router.register(r'genres', GenreViewSet)
-router.register(r'conditions', ConditionViewSet)
+# router.register(r'authors', AuthorViewSet)
+# router.register(r'genres', GenreViewSet)
+# router.register(r'conditions', ConditionViewSet)
 router.register(r'books', BookViewSet)
 
 urlpatterns = [

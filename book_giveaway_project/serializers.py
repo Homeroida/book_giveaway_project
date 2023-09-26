@@ -3,15 +3,16 @@ from django.contrib.auth.models import User
 
 
 class RegistrationSerializer(serializers.ModelSerializer):
+    password = serializers.CharField(write_only=True)
+
     class Meta:
         model = User
         fields = ('username', 'password', 'email')
-        extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):
         user = User(
-            username=validated_data['username'],
-            email=validated_data['email']
+            email=validated_data['email'],
+            username=validated_data['username']
         )
         user.set_password(validated_data['password'])
         user.save()
