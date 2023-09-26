@@ -31,7 +31,7 @@ class Book(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     location = models.CharField(max_length=200)
     is_available = models.BooleanField(default=True)
-    cover_image = models.ImageField(upload_to='book_covers/')
+    cover_image = models.ImageField(upload_to='media/book_covers/')
 
     def __str__(self):
         return self.title
