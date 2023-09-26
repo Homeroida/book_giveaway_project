@@ -28,8 +28,6 @@ urlpatterns = [
     path('login/', obtain_auth_token, name='login'),
     path('schema/', SpectacularAPIView.as_view(), name='schema'),
     path('schema/docs/', SpectacularSwaggerView.as_view(url_name='schema')),
-
-
     path('me/', CurrentUserView.as_view(), name='current-user'),
 
 
