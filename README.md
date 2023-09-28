@@ -1,5 +1,15 @@
 # Book Giveaway API
 
+## Table of Contents
+
+1. [Overview](#overview)
+2. [Features](#features)
+3. [Technologies Used](#technologies-used)
+4. [Installation and Setup](#installation-and-setup)
+5. [API Endpoints](#api-endpoints)
+6. [Swagger Documentation](#swagger-documentation)
+7. [Contributing](#contributing)
+
 ## Overview
 
 This is a Django RESTful API project for a book giveaway platform. The API allows users to manage books they want to give away, filter books based on various parameters, and manage supporting resources like authors and genres. It also includes user authentication and a feature for book owners to select a recipient if multiple people are interested in a book.
@@ -7,21 +17,24 @@ This is a Django RESTful API project for a book giveaway platform. The API allow
 ## Features
 
 ### User Authentication
-- Registration with email
-- Login with email and password
+- **Registration with Email**: Users can register using their email address. The registration endpoint is `/register/`.
+- **Login**: Users can log in using their email and password. The login endpoint is `/login/`.
+
 
 ### Books Management
-- CRUD operations for books
-- Filtering books based on author, genre, condition, etc.
+- **CRUD Operations**: Users can create, read, update, and delete books. The CRUD operations are handled by the `BookViewSet` class.
+- **Book Filtering**: Users can filter books based on various parameters like author, genre, etc., using the `BookFilter` class.
 
 ### Supporting Resources
-- Manage authors, genres, and conditions
+- **Authors, Genres, and Conditions**: The API allows users to manage authors, genres, and conditions. These are managed by the `AuthorViewSet`, `GenreViewSet`, and `ConditionViewSet` classes respectively.
 
 ### Book Retrieval Information
-- Information on the location from where the book can be picked up
+- **Location**: Each book has a `location` field that indicates where the book can be picked up.
+
 
 ### Ownership Decision
-- If multiple people are interested in a book, the owner can choose the recipient
+- **Recipient Selection**: If multiple people are interested in a book, the owner has the capability to choose the recipient. This is managed by the `InterestViewSet` class and the `select_recipient` method.
+
 
 ## Libraries Used
 
@@ -73,12 +86,12 @@ This is a Django RESTful API project for a book giveaway platform. The API allow
 
 ## API Endpoints
 
-- Registration: `/register/`
-- Login: `/login/`
-- Books: `/books/`
-- Authors: `/authors/`
-- Genres: `/genres/`
-- Conditions: `/conditions/`
+- `/register/`: User Registration
+- `/login/`: User Login
+- `/books/`: CRUD operations for books
+- `/authors/`: CRUD operations for authors
+- `/genres/`: CRUD operations for genres
+- `/conditions/`: CRUD operations for conditions
 
 ## Swagger Documentation
 - Access the Swagger documentation at `/schema/docs/`
