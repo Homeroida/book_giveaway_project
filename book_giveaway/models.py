@@ -35,3 +35,11 @@ class Book(models.Model):
 
     def __str__(self):
         return self.title
+
+class Interest(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    is_owner_selected = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.user.username} is interested in {self.book.title}"

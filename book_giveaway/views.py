@@ -1,7 +1,12 @@
 from rest_framework import viewsets
-from .models import Author, Genre, Condition, Book
-from .serializers import AuthorSerializer, GenreSerializer, ConditionSerializer, BookSerializer
+from .models import Author, Genre, Condition, Book, Interest
+from .serializers import AuthorSerializer, GenreSerializer, ConditionSerializer, BookSerializer, InterestSerializer
 from .filters import BookFilter
+
+
+class InterestViewSet(viewsets.ModelViewSet):
+    queryset = Interest.objects.all()
+    serializer_class = InterestSerializer
 
 
 class AuthorViewSet(viewsets.ModelViewSet):
