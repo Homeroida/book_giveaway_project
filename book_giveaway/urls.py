@@ -12,7 +12,6 @@ router.register(r'conditions', ConditionViewSet)
 router.register(r'books', BookViewSet)
 router.register(r'interests', InterestViewSet)
 
-
 urlpatterns = [
     path('', include(router.urls)),
     # Add authentication and registration URL patterns
