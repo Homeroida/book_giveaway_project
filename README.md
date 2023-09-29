@@ -4,7 +4,7 @@
 
 1. [Overview](#overview)
 2. [Features](#features)
-3. [Technologies Used](#technologies-used)
+3. [Libraries Used](#Libraries-Used)
 4. [Installation and Setup](#installation-and-setup)
 5. [API Endpoints](#api-endpoints)
 6. [Business Logic](#business-logic)
