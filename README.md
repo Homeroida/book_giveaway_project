@@ -56,9 +56,9 @@ This is a Django RESTful API project for a book giveaway platform. The API allow
 
 - Toolkit for building Web APIs on top of Django.
 
-### django-filter
+## django-filter
 
-## How to Use Filters
+### How to Use Filters
 
 The API uses the `django-filter` library for creating complex queries for filtering books. You can use the filters by appending query parameters to the API endpoint for books.
 
