@@ -56,7 +56,7 @@ This is a Django RESTful API project for a book giveaway platform. The API allow
 
 - Toolkit for building Web APIs on top of Django.
 
-## django-filter
+### django-filter
 
 ### How to Use Filters
 
