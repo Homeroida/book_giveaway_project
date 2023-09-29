@@ -165,6 +165,7 @@ venv\Scripts\activate
 - `/authors/`: CRUD operations for authors
 - `/genres/`: CRUD operations for genres
 - `/conditions/`: CRUD operations for conditions
+- `/photos/`: CRUD operations for photos
 
 ## Swagger Documentation
 
