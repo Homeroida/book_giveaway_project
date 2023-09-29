@@ -240,6 +240,7 @@ If you encounter any issues while setting up or running the Docker container, co
 - `/genres/`: CRUD operations for genres
 - `/conditions/`: CRUD operations for conditions
 - `/photos/`: CRUD operations for photos
+- `/interests/`: CRUD operations for Book interests logic
 
 ## Swagger Documentation
 
