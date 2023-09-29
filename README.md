@@ -7,8 +7,9 @@
 3. [Technologies Used](#technologies-used)
 4. [Installation and Setup](#installation-and-setup)
 5. [API Endpoints](#api-endpoints)
-6. [Swagger Documentation](#swagger-documentation)
-7. [Contributing](#contributing)
+6. [Business Logic](#business-logic)
+7. [Swagger Documentation](#swagger-documentation)
+8. [Contributing](#contributing)
 
 ## Overview
 
@@ -17,72 +18,88 @@ This is a Django RESTful API project for a book giveaway platform. The API allow
 ## Features
 
 ### User Authentication
+
 - **Registration with Email**: Users can register using their email address. The registration endpoint is `/register/`.
 - **Login**: Users can log in using their email and password. The login endpoint is `/login/`.
 
-
 ### Books Management
+
 - **CRUD Operations**: Users can create, read, update, and delete books. The CRUD operations are handled by the `BookViewSet` class.
 - **Book Filtering**: Users can filter books based on various parameters like author, genre, etc., using the `BookFilter` class.
 
 ### Supporting Resources
+
 - **Authors, Genres, and Conditions**: The API allows users to manage authors, genres, and conditions. These are managed by the `AuthorViewSet`, `GenreViewSet`, and `ConditionViewSet` classes respectively.
 
 ### Book Retrieval Information
+
 - **Location**: Each book has a `location` field that indicates where the book can be picked up.
 
-
 ### Ownership Decision
-- **Recipient Selection**: If multiple people are interested in a book, the owner has the capability to choose the recipient. This is managed by the `InterestViewSet` class and the `select_recipient` method.
 
+- **Recipient Selection**: If multiple people are interested in a book, the owner has the capability to choose the recipient. This is managed by the `InterestViewSet` class and the `select_recipient` method.
 
 ## Libraries Used
 
 ### Django
+
 - Web framework for building the API.
 
 ### Django REST Framework
+
 - Toolkit for building Web APIs on top of Django.
 
 ### django-filter
+
 - Used for creating complex queries for filtering books.
 
+### Pagination
+
+- Pagination is implemented using Django REST Framework's built-in pagination classes.
+
 ### drf-spectacular
+
 - Used for generating the Swagger documentation for the API.
 
 ### Pillow
+
 - Used for handling image uploads for book covers.
 
 ### SQLite
+
 - Database used for development.
 
 ## Installation and Setup
 
 1. **Clone the Repository**
-    ```bash
-    git clone https://github.com/Homeroida/book_giveaway_project.git
-    ```
+
+   ```bash
+   git clone https://github.com/Homeroida/book_giveaway_project.git
+   ```
 
 2. **Navigate to Project Directory**
-    ```bash
-    cd book_giveaway_project
-    ```
+
+   ```bash
+   cd book_giveaway_project
+   ```
 
 3. **Install Dependencies**
-    ```bash
-    pip install -r requirements.txt
-    ```
+
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 4. **Run Migrations**
-    ```bash
-    python manage.py makemigrations
-    python manage.py migrate
-    ```
+
+   ```bash
+   python manage.py makemigrations
+   python manage.py migrate
+   ```
 
 5. **Run the Server**
-    ```bash
-    python manage.py runserver
-    ```
+   ```bash
+   python manage.py runserver
+   ```
 
 ## API Endpoints
 
@@ -93,8 +110,14 @@ This is a Django RESTful API project for a book giveaway platform. The API allow
 - `/genres/`: CRUD operations for genres
 - `/conditions/`: CRUD operations for conditions
 
+## Business Logic
+
+The core logic of the application revolves around the management of books and users. The API provides a set of functionalities for users to add, edit, delete, or give away books. The book listing and retrieval are optimized through the use of pagination, ensuring a smooth user experience even with a large dataset.
+
 ## Swagger Documentation
+
 - Access the Swagger documentation at `/schema/docs/`
+- Access the redoc documentation at `/schema/redoc/`
 
 ## Contributing
 
