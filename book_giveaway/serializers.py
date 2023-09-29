@@ -1,5 +1,11 @@
 from rest_framework import serializers
-from .models import Author, Genre, Condition, Book, Interest
+from .models import Author, Genre, Condition, Book, Interest, Photo
+
+
+class PhotoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Photo
+        fields = '__all__'
 
 
 class AuthorSerializer(serializers.ModelSerializer):

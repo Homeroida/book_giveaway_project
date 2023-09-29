@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import AuthorViewSet, GenreViewSet, ConditionViewSet, BookViewSet, InterestViewSet
+from .views import AuthorViewSet, GenreViewSet, ConditionViewSet, BookViewSet, InterestViewSet, PhotoViewSet
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -11,6 +11,8 @@ router.register(r'genres', GenreViewSet)
 router.register(r'conditions', ConditionViewSet)
 router.register(r'books', BookViewSet)
 router.register(r'interests', InterestViewSet)
+router.register(r'Photos', PhotoViewSet)
+
 
 urlpatterns = [
     path('', include(router.urls)),
