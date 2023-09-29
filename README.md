@@ -4,12 +4,13 @@
 
 1. [Overview](#overview)
 2. [Features](#features)
-3. [Libraries Used](#Libraries-Used)
-4. [Installation and Setup](#installation-and-setup)
-5. [API Endpoints](#api-endpoints)
-6. [Business Logic](#business-logic)
-7. [Swagger Documentation](#swagger-documentation)
-8. [Contributing](#contributing)
+3. [Technologies Used](#technologies-used)
+4. [Libraries Used](#Libraries-Used)
+5. [Installation and Setup](#installation-and-setup)
+6. [API Endpoints](#api-endpoints)
+7. [Business Logic](#business-logic)
+8. [Swagger Documentation](#swagger-documentation)
+9. [Contributing](#contributing)
 
 ## Overview
 
@@ -39,11 +40,17 @@ This is a Django RESTful API project for a book giveaway platform. The API allow
 
 - **Recipient Selection**: If multiple people are interested in a book, the owner has the capability to choose the recipient. This is managed by the `InterestViewSet` class and the `select_recipient` method.
 
-## Libraries Used
+## Technologies Used
 
 ### Django
 
 - Web framework for building the API.
+
+### SQLite
+
+- Database used for development.
+
+## Libraries Used
 
 ### Django REST Framework
 
@@ -64,10 +71,6 @@ This is a Django RESTful API project for a book giveaway platform. The API allow
 ### Pillow
 
 - Used for handling image uploads for book covers.
-
-### SQLite
-
-- Database used for development.
 
 ## Installation and Setup
 
