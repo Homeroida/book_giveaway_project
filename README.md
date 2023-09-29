@@ -74,6 +74,24 @@ This is a Django RESTful API project for a book giveaway platform. The API allow
 
 ## Installation and Setup
 
+### Setting Up a Virtual Environment
+
+Before you begin, it's advisable to set up a Python virtual environment. This isolates your project and avoids conflicts with other packages. Here's how to create one:
+
+#### For macOS and Linux:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+#### For Windows:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
 1. **Clone the Repository**
 
    ```bash
@@ -86,20 +104,34 @@ This is a Django RESTful API project for a book giveaway platform. The API allow
    cd book_giveaway_project
    ```
 
-3. **Install Dependencies**
+3. **Activate the Virtual Environment**
+
+#### For macOS and Linux:
+
+```bash
+source venv/bin/activate
+```
+
+#### For Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+4. **Install Dependencies**
 
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Run Migrations**
+5. **Run Migrations**
 
    ```bash
    python manage.py makemigrations
    python manage.py migrate
    ```
 
-5. **Run the Server**
+6. **Run the Server**
    ```bash
    python manage.py runserver
    ```
@@ -113,14 +145,14 @@ This is a Django RESTful API project for a book giveaway platform. The API allow
 - `/genres/`: CRUD operations for genres
 - `/conditions/`: CRUD operations for conditions
 
+## Swagger Documentation
+
+- Access the Swagger documentation at `/docs/`
+- Access the redoc documentation at `/redoc/`
+
 ## Business Logic
 
 The core logic of the application revolves around the management of books and users. The API provides a set of functionalities for users to add, edit, delete, or give away books. The book listing and retrieval are optimized through the use of pagination, ensuring a smooth user experience even with a large dataset.
-
-## Swagger Documentation
-
-- Access the Swagger documentation at `/schema/docs/`
-- Access the redoc documentation at `/schema/redoc/`
 
 ## Contributing
 

@@ -58,17 +58,23 @@ REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
+# settings.py
+
 SPECTACULAR_SETTINGS = {
     'TITLE': 'Book Giveaway API',
+    'DESCRIPTION': 'An API for book giveaways.',
+    'VERSION': '1.0.0',
+    'LICENSE': {
+        'name': 'MIT',
+        'url': 'https://opensource.org/licenses/MIT',
+    },
+    'CONTACT': {
+        'name': 'Zurab Tchanishvili',
+        'email': 'chanishvili@gmail.com',
+    },
+    'DEFAULT_GENERATOR_CLASS': 'drf_spectacular.generators.SchemaGenerator',
+
 }
-
-# REST_FRAMEWORK = {
-#     'DEFAULT_AUTHENTICATION_CLASSES': [
-#         'rest_framework.authentication.TokenAuthentication',
-
-#     ],
-#     'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.IsAuthenticated'],
-# }
 
 
 MIDDLEWARE = [
