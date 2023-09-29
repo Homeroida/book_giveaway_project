@@ -152,7 +152,13 @@ venv\Scripts\activate
    python manage.py migrate
    ```
 
-6. **Run the Server**
+6. **Create SuperUser**
+
+   ```bash
+   python manage.py createsuperuser
+   ```
+
+7. **Run the Server**
    ```bash
    python manage.py runserver
    ```
