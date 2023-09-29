@@ -7,10 +7,11 @@
 3. [Technologies Used](#technologies-used)
 4. [Libraries Used](#Libraries-Used)
 5. [Installation and Setup](#installation-and-setup)
-6. [API Endpoints](#api-endpoints)
-7. [Business Logic](#business-logic)
-8. [Swagger Documentation](#swagger-documentation)
-9. [Contributing](#contributing)
+6. [Docker Setup](#docker-setup)
+7. [API Endpoints](#api-endpoints)
+8. [Business Logic](#business-logic)
+9. [Swagger Documentation](#swagger-documentation)
+10. [Contributing](#contributing)
 
 ## Overview
 
@@ -49,6 +50,10 @@ This is a Django RESTful API project for a book giveaway platform. The API allow
 ### SQLite
 
 - Database used for development.
+
+### Docker
+
+- Platform for containerizing.
 
 ## Libraries Used
 
@@ -162,6 +167,69 @@ venv\Scripts\activate
    ```bash
    python manage.py runserver
    ```
+
+## Docker Setup
+
+### Overview
+
+This section provides guidelines for building and running the Book Giveaway API project using Docker. Docker helps you to containerize the application, ensuring that it runs the same regardless of where it's deployed.
+
+### Prerequisites
+
+- Docker installed on your machine. [Get Docker](https://docs.docker.com/get-docker/)
+- Docker Compose installed if you're using Windows or macOS. [Get Docker Compose](https://docs.docker.com/compose/install/)
+
+### Steps
+
+#### 1. Build Docker Image
+
+Navigate to the project directory where the `Dockerfile` is located and run the following command to build the Docker image.
+
+```bash
+docker build -t book_giveaway_api .
+```
+
+This will build the Docker image with the name `book_giveaway_api`.
+
+#### 2. Run Docker Container
+
+To run the Docker container, execute the following command:
+
+```bash
+docker run -p 8000:8000 book_giveaway_api
+```
+
+This will map port 8000 inside the container to port 8000 on your host machine.
+
+#### 3. Check API
+
+Open your browser and navigate to `http://localhost:8000` to confirm that the API is running.
+
+#### 4. Stop Docker Container
+
+To stop the running container, you can use the `docker stop` command with the container ID or name.
+
+```bash
+docker stop [CONTAINER_ID_OR_NAME]
+```
+
+### Docker Compose (Optional)
+
+If you're using Docker Compose, you can define services in a `docker-compose.yml` file. To bring up the services, use:
+
+```bash
+docker-compose up
+```
+
+To stop them:
+
+```bash
+docker-compose down
+```
+
+### Troubleshooting
+
+If you encounter any issues while setting up or running the Docker container, consult the [Docker documentation](https://docs.docker.com/get-started/overview/) for troubleshooting tips.
 
 ## API Endpoints
 
