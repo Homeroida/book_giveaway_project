@@ -41,7 +41,7 @@ class Book(models.Model):
     is_available = models.BooleanField(default=True)
     photo = models.ForeignKey(Photo, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
-    published_date = models.DateTimeField(default=timezone.now)
+    published_year = models.IntegerField(null=True)
 
     def __str__(self):
         return self.title

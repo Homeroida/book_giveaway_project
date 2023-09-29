@@ -1,11 +1,9 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, pagination
 from .models import Author, Genre, Condition, Book, Interest, Photo
 from .serializers import AuthorSerializer, GenreSerializer, ConditionSerializer, BookSerializer, InterestSerializer, PhotoSerializer
 from .filters import BookFilter
 from rest_framework.decorators import action
 from rest_framework.response import Response
-
-# The InterestViewSet class handles the CRUD operations for Interest objects.
 
 
 class InterestViewSet(viewsets.ModelViewSet):
@@ -49,9 +47,14 @@ class ConditionViewSet(viewsets.ModelViewSet):
     serializer_class = ConditionSerializer
 
 
+class CustomPagination(pagination.PageNumberPagination):
+    page_size = 3
+    page_size_query_param = 'page_size'
+    max_page_size = 1000
+
+
 class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
     filterset_class = BookFilter
-
-    # Implement filtering based on parameters (author, genre, etc.)
+    pagination_class = CustomPagination
