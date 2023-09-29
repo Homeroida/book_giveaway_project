@@ -58,7 +58,28 @@ This is a Django RESTful API project for a book giveaway platform. The API allow
 
 ### django-filter
 
-- Used for creating complex queries for filtering books.
+## How to Use Filters
+
+The API uses the `django-filter` library for creating complex queries for filtering books. You can use the filters by appending query parameters to the API endpoint for books.
+
+### Examples:
+
+1. **Filter by Author:** To get books by a particular author, you can use the `author` query parameter.
+
+   ```
+   GET /books/?author=author
+   ```
+
+2. **Filter by Genre:** To get books of a specific genre, use the `genre` query parameter.
+   ```
+   GET /books/?genre=genre
+   ```
+
+You can combine multiple filters as well:
+
+```
+GET /books/?author=author&genre=genre
+```
 
 ### Pagination
 
